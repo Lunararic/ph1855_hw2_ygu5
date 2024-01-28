@@ -7,6 +7,65 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(NSM3)
+library(tidyverse)
+```
+
+
+#HW2: Chap3 Q1, 3, 6, 19, 22, 25, 27, 29, 46, 63
+## Page54 Q1
+```{r}
+# conduct wilcoxon signed-rank test
+# input data
+x = c(350, 200, 240, 290, 90, 370, 240)
+y = c(480, 130, 250, 310, 280, 1450, 280)
+
+# run the paired wilcoxon signed-rank test
+wilcox.test(x, y, paired = T, alternative = "less")
+```
+
+
+## Page58 Q19
+```{r}
+# need to calculate theta-the HL estimator for treatment effects
+# first input the data
+x = c(350, 200, 240, 290, 90, 370, 240)
+y = c(480, 130, 250, 310, 280, 1450, 280)
+# calculate theta
+# install.packages("NSM3")
+library(NSM3)
+owa(x, y)
+```
+
+## Page58 Q22
+```{r}
+# input data
+x = c(1.83, 0.50, 1.62, 2.48, 1.68, 1.88, 1.55, 3.06, 1.30)
+y = c(0.878, 0.647, 0.598, 2.05, 1.06, 1.29, 1.06, 3.14, 1.29)
+# calculate Walsh averages
+owa(x, y)
+
+```
+
+
+## Page62 Q27
+```{r}
+#input data
+x = c(350, 200, 240, 290, 90, 370, 240)
+y = c(480, 130, 250, 310, 280, 1450, 280)
+# calculate the confidence interval given the exact coefficient
+wilcox.test(y-x, conf.int = T, conf.level = 0.954)
+```
+
+
+## Page62 Q29
+```{r}
+#input data
+x = c(350, 200, 240, 290, 90, 370, 240)
+y = c(480, 130, 250, 310, 280, 1450, 280)
+# calculate the confidence interval given the exact coefficient
+wilcox.test(y-x, conf.int = T, conf.level = 1 - 0.078)
+
 ```
 
 
