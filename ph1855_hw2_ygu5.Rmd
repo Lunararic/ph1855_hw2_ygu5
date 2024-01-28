@@ -1,0 +1,13 @@
+---
+title: "ph1855_hw2_ygu5"
+author: "Yue Gu"
+date: "2024-01-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
