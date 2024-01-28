@@ -364,13 +364,13 @@ x = c(350, 200, 240, 290, 90, 370, 240)
 y = c(480, 130, 250, 310, 280, 1450, 280)
 
 # run the paired wilcoxon signed-rank test
-wilcox.test(x, y, paired = T, alternative = &quot;less&quot;)</code></pre>
+wilcox.test(x, y, paired = T, alternative = &quot;greater&quot;)</code></pre>
 <pre><code>## 
 ##  Wilcoxon signed rank exact test
 ## 
 ## data:  x and y
-## V = 4, p-value = 0.05469
-## alternative hypothesis: true location shift is less than 0</code></pre>
+## V = 4, p-value = 0.9609
+## alternative hypothesis: true location shift is greater than 0</code></pre>
 <div id="page58-q19" class="section level2">
 <h2>Page58 Q19</h2>
 <pre class="r"><code># need to calculate theta-the HL estimator for treatment effects
@@ -442,6 +442,30 @@ wilcox.test(y-x, conf.int = T, conf.level = 1 - 0.078)</code></pre>
 ## sample estimates:
 ## (pseudo)median 
 ##             80</code></pre>
+</div>
+<div id="page74-q46" class="section level2">
+<h2>Page74 Q46</h2>
+<pre class="r"><code>#input data
+x = c(270, 150, 270, 420, 202, 255, 165, 220, 305, 210, 240, 300, 300, 70)
+y = c(525, 570, 190, 395, 370, 210, 490, 250, 360, 285, 630, 385, 195, 295)
+# calculate the confidence interval given the exact coefficient
+wilcox.test(x, y, paired = T, alternative = &quot;greater&quot;)</code></pre>
+<pre><code>## 
+##  Wilcoxon signed rank exact test
+## 
+## data:  x and y
+## V = 18, p-value = 0.9877
+## alternative hypothesis: true location shift is greater than 0</code></pre>
+</div>
+<div id="page79-q63" class="section level2">
+<h2>Page79 Q63</h2>
+<pre class="r"><code>#input data
+x = c(350, 200, 240, 290, 90, 370, 240)
+y = c(480, 130, 250, 310, 280, 1450, 280)
+#calculate theta-tilt
+z = y-x
+median(z)</code></pre>
+<pre><code>## [1] 40</code></pre>
 </div>
 
 
